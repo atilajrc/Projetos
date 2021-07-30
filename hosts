@@ -1,5 +1,5 @@
-[dbserver]
-192.168.0.100 ansible_user=vagrant ansible_ssh_private_key_file=".vagrant/machines/dbserver/libvirt/private_key"
+[centos]
+192.168.0.100 ansible_user=vagrant ansible_ssh_private_key_file=".vagrant/machines/centos/libvirt/private_key"
 
-#[database]
-#192.168.122.60 ansible_user=vagrant ansible_ssh_private_key_file=".vagrant/machines/mysql/libvirt/private_key"
+[ubuntu]
+192.168.0.101 ansible_user=vagrant ansible_ssh_private_key_file=".vagrant/machines/ubuntu/libvirt/private_key"

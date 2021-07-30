@@ -5,7 +5,32 @@
 
   tasks:
   
-  - name: upgrade all packages
+  - name: Upgrade all packages centos
     yum:
       name: '*'
       state: latest
+      security: yes
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+  - name: Instalar pacotes centos
+    yum:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - net-tools
+      - git
+    when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+  - name: Upgrade all packages ubuntu
+    apt:
+      update_cache: yes 
+      upgrade: yes
+      state: latest
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+
+  - name: Instalar pacotes ubuntu
+    apt:
+      pkg:
+        - net-tools
+        - git
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
