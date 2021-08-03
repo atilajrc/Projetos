@@ -1,0 +1,7 @@
+1 ---
+2 - hosts: localhost
+3   tasks:
+4     - name: Run our original Ansible command
+5       debug: msg="Ansible is fun"
+6     - name: We also need to test connectivity
+7       ping:
